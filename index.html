@@ -4,223 +4,236 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bartosz Adamus – Aranżacja Terenu i Ogrodnictwo | Wrocław</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --sage:#4a6741;
-  --sage-dark:#344b2c;
-  --sage-light:#6a8f60;
-  --sage-pale:#e8f0e5;
-  --sage-mist:#f0f5ee;
-  --moss:#2e4a29;
+  --sage:#3d5c35;
+  --sage-dark:#2a3f24;
+  --sage-light:#5a7d51;
+  --sage-pale:#eaf2e6;
+  --sage-mist:#f4f8f2;
+  --moss:#1e3318;
   --stone:#6b7280;
-  --warm:#f5f2ed;
-  --text:#1e2820;
+  --warm:#f7f5f0;
+  --text:#1a2118;
   --text-soft:#4a5568;
   --white:#ffffff;
-  --accent:#5b8a4e;
-  --mint:rgba(168,209,152,0.9);
-  --border:rgba(74,103,65,0.15);
-  --radius:8px;
+  --accent:#4a6e40;
+  --border:rgba(61,92,53,0.14);
+  --radius:6px;
+  --radius-lg:12px;
 }
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--warm);overflow-x:hidden;line-height:1.6}
+body{font-family:'Outfit',sans-serif;color:var(--text);background:var(--warm);overflow-x:hidden;line-height:1.6}
 
-@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+/* No italic anywhere */
+*{font-style:normal !important}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes slideRight{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:translateX(0)}}
-@keyframes slideLeft{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:translateX(0)}}
-@keyframes lineGrow{from{width:0}to{width:100%}}
-@keyframes leafFloat{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-18px) rotate(3deg)}}
-@keyframes pulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.7;transform:scale(1.08)}}
+@keyframes bgPan{0%{transform:scale(1.06)}100%{transform:scale(1)}}
 @keyframes navSlide{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
-@keyframes bgPan{0%{transform:scale(1.08)}100%{transform:scale(1)}}
+@keyframes widthGrow{from{width:0}to{width:60px}}
 
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-left{opacity:0;transform:translateX(-50px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
 .reveal-left.visible{opacity:1;transform:translateX(0)}
-.reveal-right{opacity:0;transform:translateX(50px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
 .reveal-right.visible{opacity:1;transform:translateX(0)}
-.reveal-scale{opacity:0;transform:scale(.92);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
-.reveal-scale.visible{opacity:1;transform:scale(1)}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,242,237,0.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);animation:navSlide .6s cubic-bezier(.22,1,.36,1) both;transition:transform .4s cubic-bezier(.22,1,.36,1)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:400;color:var(--sage-dark);text-decoration:none;line-height:1.25;letter-spacing:.01em}
-.logo span{display:block;color:var(--stone);font-family:'DM Sans',sans-serif;font-weight:300;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{text-decoration:none;color:var(--text-soft);font-size:.8rem;font-weight:400;transition:color .25s;position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--sage);transition:width .3s cubic-bezier(.22,1,.36,1)}
-.nav-links a:hover::after{width:100%}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,245,240,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);animation:navSlide .5s ease both;transition:transform .35s ease}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--sage-dark);text-decoration:none;line-height:1.2;letter-spacing:.01em}
+.logo span{display:block;color:var(--stone);font-family:'Outfit',sans-serif;font-weight:300;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:2.25rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text-soft);font-size:.78rem;font-weight:400;letter-spacing:.02em;transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--sage);transition:width .25s ease}
 .nav-links a:hover{color:var(--sage)}
-.nav-cta{background:var(--sage);color:var(--white);padding:.6rem 1.4rem;font-size:.8rem;font-weight:500;text-decoration:none;border-radius:var(--radius);transition:background .25s,transform .2s;display:inline-block}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--sage);color:var(--white);padding:.55rem 1.3rem;font-size:.78rem;font-weight:500;text-decoration:none;border-radius:var(--radius);transition:background .2s,transform .15s;letter-spacing:.02em}
 .nav-cta:hover{background:var(--sage-dark);transform:translateY(-1px)}
-@media(max-width:768px){.nav-links{display:none}}
+@media(max-width:900px){.nav-links{display:none}}
 
-.hero{display:grid;grid-template-columns:55% 45%;min-height:100vh;padding:0 !important}
-@media(max-width:900px){.hero{grid-template-columns:1fr}}
-.hero-left{background:var(--moss);display:flex;align-items:center;padding:5rem 4rem 5rem 5rem;position:relative;overflow:hidden;min-height:100vh}
-.hero-left::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(106,143,96,.15) 0%,transparent 60%);pointer-events:none}
-.hero-left::after{content:'';position:absolute;bottom:-60px;right:-60px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(168,209,152,.08);animation:pulse 6s ease-in-out infinite}
-.hero-text{position:relative;z-index:1;max-width:460px}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1rem;border-radius:40px;margin-bottom:2rem;border:1px solid rgba(255,255,255,.12);animation:fadeUp .6s .2s both}
-.hero-title{font-family:'Fraunces',serif;font-size:3.4rem;font-weight:300;line-height:1.1;color:var(--white);margin-bottom:.75rem;animation:fadeUp .7s .35s both;font-style:normal}
-.hero-title .hl{color:rgba(168,209,152,.9);font-style:normal}
-.hero-sub{font-size:.95rem;color:rgba(255,255,255,.55);margin-bottom:2rem;font-weight:300;font-family:'DM Sans',sans-serif;font-style:normal;animation:fadeUp .7s .45s both}
-.hero-desc{color:rgba(255,255,255,.7);line-height:1.8;font-size:.9rem;margin-bottom:2.5rem;font-weight:300;animation:fadeUp .7s .55s both}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .7s .65s both}
-.btn-primary{background:var(--accent);color:var(--white);padding:.9rem 2rem;font-size:.85rem;font-weight:500;text-decoration:none;border-radius:var(--radius);transition:all .3s;display:inline-block;position:relative;overflow:hidden}
-.btn-primary::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.12);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.btn-primary:hover::before{transform:scaleX(1)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(74,103,65,.35)}
-.btn-ghost{border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.8);padding:.9rem 2rem;font-size:.85rem;font-weight:400;text-decoration:none;border-radius:var(--radius);transition:all .3s;display:inline-block}
-.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.4);transform:translateY(-1px)}
-.hero-right{position:relative;display:flex;flex-direction:column;min-height:100vh}
-.hero-img{flex:1;overflow:hidden;background:var(--sage-pale);position:relative}
-.hero-img img{width:100%;height:100%;object-fit:cover;animation:bgPan 8s ease-out both}
-.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 70%,rgba(245,242,237,.3));pointer-events:none}
-.hero-info-bar{background:var(--white);padding:1.75rem 2rem;display:flex;gap:2.5rem;border-top:3px solid var(--sage);animation:fadeUp .7s .8s both}
-.info-item strong{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);font-weight:600;margin-bottom:.25rem}
-.info-item span{font-size:.9rem;color:var(--text);font-weight:400}
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;height:100vh;min-height:600px}
+@media(max-width:900px){.hero{grid-template-columns:1fr;height:auto}}
+.hero-left{background:var(--moss);display:flex;flex-direction:column;justify-content:center;padding:5rem 4.5rem 5rem 5rem;position:relative;overflow:hidden;padding-top:calc(64px + 4rem)}
+.hero-left::before{content:'';position:absolute;top:0;right:0;width:280px;height:280px;border-radius:50%;border:1px solid rgba(90,125,81,.1);transform:translate(30%,-30%);pointer-events:none}
+.hero-left::after{content:'';position:absolute;bottom:0;left:0;width:200px;height:200px;border-radius:50%;border:1px solid rgba(90,125,81,.07);transform:translate(-40%,40%);pointer-events:none}
+.hero-kicker{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.55);font-size:.65rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:.38rem .9rem;border-radius:40px;margin-bottom:2rem;animation:fadeUp .5s .15s both}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:400;line-height:1.05;color:var(--white);margin-bottom:1.25rem;animation:fadeUp .6s .25s both;letter-spacing:-.01em}
+.hero-title .hl{color:rgba(156,204,138,.85)}
+.hero-desc{color:rgba(255,255,255,.6);line-height:1.85;font-size:.88rem;font-weight:300;margin-bottom:2.5rem;max-width:380px;animation:fadeUp .6s .4s both}
+.hero-actions{display:flex;gap:.9rem;flex-wrap:wrap;animation:fadeUp .6s .5s both}
+.btn-primary{background:var(--accent);color:var(--white);padding:.85rem 1.85rem;font-size:.82rem;font-weight:500;text-decoration:none;border-radius:var(--radius);transition:all .25s;letter-spacing:.03em}
+.btn-primary:hover{background:var(--sage-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(42,63,36,.35)}
+.btn-ghost{border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.75);padding:.85rem 1.85rem;font-size:.82rem;font-weight:400;text-decoration:none;border-radius:var(--radius);transition:all .25s;letter-spacing:.03em}
+.btn-ghost:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.38)}
+.hero-stats{display:flex;gap:2.5rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.08);animation:fadeUp .6s .6s both}
+.hero-stat strong{display:block;font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:500;color:rgba(156,204,138,.9);line-height:1}
+.hero-stat span{font-size:.72rem;color:rgba(255,255,255,.4);font-weight:300;letter-spacing:.06em;text-transform:uppercase;margin-top:.3rem;display:block}
 
-.leaf-deco{position:absolute;opacity:.06;font-size:180px;animation:leafFloat 8s ease-in-out infinite;pointer-events:none;user-select:none}
-.leaf-deco-1{top:10%;right:5%;animation-delay:0s}
-.leaf-deco-2{bottom:15%;left:3%;animation-delay:3s;font-size:120px}
-@media(max-width:900px){.hero-left,.hero-right{min-height:auto}.hero-left{padding:5rem 2rem 3rem}}
+.hero-right{display:flex;flex-direction:column;gap:3px;background:var(--sage-pale);height:100vh;min-height:600px;padding-top:64px}
+.hero-photo-main{flex:2;overflow:hidden;position:relative;min-height:0}
+.hero-photo-main img{width:100%;height:100%;object-fit:cover;animation:bgPan 7s ease-out both}
+.hero-photo-row{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:3px;min-height:0}
+.hero-photo-sm{overflow:hidden;position:relative;background:var(--sage-pale)}
+.hero-photo-sm img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.hero-photo-sm:hover img{transform:scale(1.05)}
+@media(max-width:900px){.hero-left{padding:4rem 2rem 3rem;padding-top:calc(64px + 2rem)}.hero-right{min-height:500px;height:auto;padding-top:0}.hero-photo-row{display:none}}
 
-section{padding:5.5rem 2rem}
-.container{max-width:1200px;margin:0 auto}
-.sec-label{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:.75rem;display:block;font-weight:600}
-.sec-title{font-family:'Fraunces',serif;font-size:2.5rem;font-weight:300;color:var(--text);line-height:1.2;margin-bottom:1rem;font-style:normal}
-.sec-title .hl{color:var(--sage);font-style:normal}
-.sec-lead{color:var(--text-soft);line-height:1.8;max-width:540px;font-size:.92rem;font-weight:300}
+/* STRIP */
+.strip{background:var(--sage);padding:1.1rem 2.5rem}
+.strip-inner{max-width:1280px;margin:0 auto;display:flex;gap:3rem;align-items:center;justify-content:center;flex-wrap:wrap}
+.strip-item{display:flex;align-items:center;gap:.65rem;color:rgba(255,255,255,.85);font-size:.8rem;font-weight:400;letter-spacing:.02em}
+.strip-icon{width:28px;height:28px;background:rgba(255,255,255,.12);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
 
+/* SECTIONS */
+section{padding:6rem 2.5rem}
+.container{max-width:1280px;margin:0 auto}
+.sec-eyebrow{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:.65rem;display:block;font-weight:600}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:2.7rem;font-weight:400;color:var(--text);line-height:1.15;margin-bottom:1rem;letter-spacing:-.01em}
+.sec-title .hl{color:var(--sage)}
+.sec-lead{color:var(--text-soft);line-height:1.85;max-width:500px;font-size:.9rem;font-weight:300}
+.section-header{margin-bottom:3.5rem}
+
+/* SERVICES */
 .services{background:var(--sage-mist)}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.5rem;margin-top:3.5rem}
-.svc{background:var(--white);padding:2.25rem;border-radius:var(--radius);border:1px solid var(--border);transition:all .4s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden;cursor:default}
-.svc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sage),var(--sage-light));transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.22,1,.36,1)}
-.svc::after{content:'';position:absolute;inset:0;background:var(--sage-mist);opacity:0;transition:opacity .4s}
-.svc:hover::before{transform:scaleX(1)}
-.svc:hover::after{opacity:.4}
-.svc:hover{box-shadow:0 12px 40px rgba(74,103,65,.12);transform:translateY(-4px)}
-.svc-icon{width:52px;height:52px;background:var(--sage-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.25rem;position:relative;z-index:1;transition:transform .3s}
-.svc:hover .svc-icon{transform:scale(1.1) rotate(-5deg)}
-.svc h3{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--text);margin-bottom:.6rem;font-weight:600;position:relative;z-index:1;font-style:normal}
-.svc p{font-size:.85rem;color:var(--text-soft);line-height:1.75;font-weight:300;position:relative;z-index:1}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.svc{background:var(--white);padding:2.25rem 2rem;border-radius:var(--radius-lg);border:1px solid var(--border);transition:all .35s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden}
+.svc-line{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sage),var(--sage-light));transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.svc:hover .svc-line{transform:scaleX(1)}
+.svc:hover{box-shadow:0 12px 40px rgba(61,92,53,.1);transform:translateY(-3px)}
+.svc-icon{width:48px;height:48px;background:var(--sage-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:1.25rem;transition:transform .3s}
+.svc:hover .svc-icon{transform:scale(1.08)}
+.svc h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--text);margin-bottom:.55rem;font-weight:500}
+.svc p{font-size:.84rem;color:var(--text-soft);line-height:1.8;font-weight:300}
 
+/* AVANT (equipment) */
 .avant-sec{background:var(--sage-dark);padding:0;overflow:hidden}
-.avant-grid{display:grid;grid-template-columns:1fr 1fr;min-height:520px}
-.avant-img{overflow:hidden;position:relative}
-.avant-img img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:transform .8s cubic-bezier(.22,1,.36,1),opacity .5s}
-.avant-img:hover img{transform:scale(1.04);opacity:.95}
-.avant-body{padding:4.5rem 3.5rem;display:flex;flex-direction:column;justify-content:center}
-.avant-label{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(168,209,152,.7);margin-bottom:1rem;display:block;font-weight:600}
-.avant-title{font-family:'Fraunces',serif;font-size:2.3rem;color:var(--white);line-height:1.2;margin-bottom:1.25rem;font-weight:300;font-style:normal}
-.avant-title .hl{color:rgba(168,209,152,.9);font-style:normal}
-.avant-text{color:rgba(255,255,255,.6);line-height:1.8;font-size:.875rem;margin-bottom:2rem;font-weight:300}
-.avant-list{list-style:none;display:flex;flex-direction:column;gap:.8rem}
-.avant-list li{display:flex;gap:.75rem;color:rgba(255,255,255,.72);font-size:.875rem;line-height:1.5;font-weight:300;align-items:flex-start;transition:color .3s,transform .3s}
-.avant-list li:hover{color:rgba(168,209,152,.9);transform:translateX(6px)}
-.avant-list li::before{content:'✓';color:rgba(168,209,152,.8);font-weight:600;flex-shrink:0;transition:transform .3s}
-.avant-list li:hover::before{transform:scale(1.3)}
-@media(max-width:900px){.avant-grid{grid-template-columns:1fr}.avant-body{padding:3rem 2rem}.avant-img{min-height:320px}}
+.avant-grid{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+.avant-img-wrap{overflow:hidden;position:relative}
+.avant-img-wrap img{width:100%;height:100%;object-fit:cover;opacity:.82;transition:transform .8s ease,opacity .4s}
+.avant-img-wrap:hover img{transform:scale(1.04);opacity:.92}
+.avant-body{padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center}
+.avant-eyebrow{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(156,204,138,.65);margin-bottom:.85rem;display:block;font-weight:600}
+.avant-title{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--white);line-height:1.15;margin-bottom:1.25rem;font-weight:400;letter-spacing:-.01em}
+.avant-title .hl{color:rgba(156,204,138,.85)}
+.avant-text{color:rgba(255,255,255,.55);line-height:1.85;font-size:.87rem;font-weight:300;margin-bottom:2rem}
+.avant-list{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.avant-list li{display:flex;gap:.7rem;color:rgba(255,255,255,.68);font-size:.85rem;line-height:1.6;font-weight:300;align-items:flex-start;transition:color .25s,transform .25s}
+.avant-list li:hover{color:rgba(156,204,138,.9);transform:translateX(5px)}
+.avant-list li::before{content:'';width:16px;height:16px;background:rgba(156,204,138,.2);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:2px;transition:background .25s;position:relative}
+.avant-list li:hover::before{background:rgba(156,204,138,.35)}
+.avant-list li::after{content:'✓';position:absolute;color:rgba(156,204,138,.8);font-size:.65rem;font-weight:600;margin-left:2px;margin-top:3px}
+@media(max-width:900px){.avant-grid{grid-template-columns:1fr}.avant-body{padding:3rem 2rem}.avant-img-wrap{min-height:300px}}
 
+/* ABOUT */
 .about-sec{background:var(--warm)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.about-photo{border-radius:var(--radius);aspect-ratio:4/5;max-height:520px;overflow:hidden;position:relative}
-.about-photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,1,.36,1)}
-.about-photo:hover img{transform:scale(1.04)}
-.about-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(74,103,65,.15),transparent);pointer-events:none}
-.about-text{color:var(--text-soft);line-height:1.85;font-size:.9rem;margin-bottom:1rem;font-weight:300}
-.about-meta{margin-top:2rem;padding-top:1.75rem;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:.8rem}
-.meta-row{display:grid;grid-template-columns:100px 1fr;gap:1rem;font-size:.875rem;transition:transform .25s}
+.about-grid{display:grid;grid-template-columns:5fr 6fr;gap:5.5rem;align-items:center}
+.about-visual{display:flex;flex-direction:column;gap:8px}
+.about-photo-main{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/5;position:relative;flex:1}
+.about-photo-main img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.about-photo-main:hover img{transform:scale(1.03)}
+.about-photo-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.about-photo-sm{border-radius:var(--radius);overflow:hidden;aspect-ratio:3/2;position:relative}
+.about-photo-sm img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.about-photo-sm:hover img{transform:scale(1.05)}
+.about-text{color:var(--text-soft);line-height:1.9;font-size:.88rem;margin-bottom:.9rem;font-weight:300}
+.about-meta{margin-top:2.25rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:.75rem}
+.meta-row{display:grid;grid-template-columns:90px 1fr;gap:1rem;font-size:.84rem;padding:.35rem 0;transition:transform .2s}
 .meta-row:hover{transform:translateX(4px)}
-.meta-row dt{color:var(--sage);font-weight:600;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding-top:2px}
-.meta-row dd{color:var(--text);font-weight:300}
-@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:3rem}}
+.meta-row dt{color:var(--sage);font-weight:600;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;padding-top:1px}
+.meta-row dd{color:var(--text);font-weight:400}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:3rem}.about-photo-row{display:none}}
 
+/* TIPS */
 .tips-sec{background:var(--sage);position:relative;overflow:hidden}
-.tips-sec::before{content:'🌿';position:absolute;right:-30px;top:50%;transform:translateY(-50%);font-size:300px;opacity:.03;pointer-events:none}
-.tips-sec .sec-label{color:rgba(255,255,255,.5)}
+.tips-sec::before{content:'';position:absolute;right:-100px;top:-100px;width:400px;height:400px;border-radius:50%;border:1px solid rgba(255,255,255,.04)}
+.tips-sec::after{content:'';position:absolute;left:-80px;bottom:-80px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(255,255,255,.04)}
+.tips-sec .sec-eyebrow{color:rgba(255,255,255,.45)}
 .tips-sec .sec-title{color:var(--white)}
-.tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.25rem;margin-top:3rem}
-.tip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:2rem;border-radius:var(--radius);transition:all .4s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden}
-.tip::before{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:rgba(168,209,152,.6);transition:width .4s cubic-bezier(.22,1,.36,1)}
-.tip:hover::before{width:100%}
-.tip:hover{background:rgba(255,255,255,.1);transform:translateY(-4px)}
-.tip-season{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem;display:block;font-weight:500}
-.tip h3{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--white);margin-bottom:.75rem;font-weight:600;font-style:normal}
-.tip p{font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.75;font-weight:300}
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;position:relative;z-index:1}
+.tip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);padding:2rem 1.75rem;border-radius:var(--radius-lg);transition:all .35s ease;position:relative;overflow:hidden}
+.tip::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:rgba(156,204,138,.5);transition:width .35s ease}
+.tip:hover::after{width:100%}
+.tip:hover{background:rgba(255,255,255,.08);transform:translateY(-3px)}
+.tip-season{font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.5rem;display:block;font-weight:500}
+.tip h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--white);margin-bottom:.65rem;font-weight:500}
+.tip p{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.8;font-weight:300}
 
-.gallery-sec{background:var(--white)}
-.carousel-wrap{margin-top:3rem;position:relative}
-.carousel{overflow:hidden;border-radius:var(--radius)}
-.carousel-track{display:flex;transition:transform .6s cubic-bezier(.22,1,.36,1)}
-.slide{min-width:100%;position:relative}
-.slide-inner{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:280px 280px;gap:6px}
-.slide-inner .ph{background:var(--sage-pale);overflow:hidden;position:relative}
-.slide-inner .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
-.slide-inner .ph:hover img{transform:scale(1.06)}
-.slide-inner .ph::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(46,74,41,.3),transparent 50%);opacity:0;transition:opacity .4s}
-.slide-inner .ph:hover::after{opacity:1}
-.car-controls{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:1.5rem}
-.car-btn{width:48px;height:48px;border:1px solid var(--border);background:var(--white);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .3s;color:var(--sage)}
-.car-btn:hover{background:var(--sage);color:var(--white);border-color:var(--sage);transform:scale(1.1)}
-.car-btn:active{transform:scale(.95)}
+/* GALLERY */
+.gallery-sec{background:var(--white);padding:6rem 0}
+.gallery-sec .gallery-header{padding:0 2.5rem;display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem;flex-wrap:wrap;gap:1.5rem;max-width:1280px;margin-left:auto;margin-right:auto}
+.carousel-wrap{position:relative;overflow:hidden}
+.carousel-track{display:flex;transition:transform .65s cubic-bezier(.22,1,.36,1)}
+.car-slide{min-width:100%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:280px 280px;gap:4px}
+.car-slide .ph{overflow:hidden;position:relative;background:var(--sage-pale)}
+.car-slide .ph img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.22,1,.36,1)}
+.car-slide .ph:hover img{transform:scale(1.06)}
+.car-slide .ph::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(30,51,24,.35),transparent 50%);opacity:0;transition:opacity .35s}
+.car-slide .ph:hover::after{opacity:1}
+.car-controls{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:1.75rem}
+.car-btn{width:48px;height:48px;border:1px solid var(--border);background:var(--white);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .25s;color:var(--sage);font-family:'Outfit',sans-serif}
+.car-btn:hover{background:var(--sage);color:var(--white);border-color:var(--sage);transform:scale(1.08)}
+.car-btn:active{transform:scale(.94)}
 .car-dots{display:flex;gap:.5rem}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all .3s}
 .dot.active{background:var(--sage);width:24px;border-radius:4px}
-@media(max-width:640px){.slide-inner{grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,180px)}}
+@media(max-width:640px){.car-slide{grid-template-rows:repeat(2,180px)}}
 
+/* CONTACT */
 .contact-sec{background:var(--sage-mist)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem}
-.contact-info h2{font-family:'Fraunces',serif;font-size:2.2rem;color:var(--text);margin-bottom:1.75rem;font-weight:300;font-style:normal}
-.contact-items{display:flex;flex-direction:column;gap:1.25rem;margin-bottom:2rem}
-.c-item{display:flex;gap:1rem;align-items:flex-start;transition:transform .3s}
-.c-item:hover{transform:translateX(6px)}
-.c-icon{width:44px;height:44px;background:var(--sage);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform .3s,background .3s}
-.c-item:hover .c-icon{transform:scale(1.1);background:var(--sage-dark)}
-.c-info strong{display:block;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);margin-bottom:.3rem;font-weight:600}
-.c-info span{font-size:.9rem;color:var(--text);font-weight:300}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.contact-title{font-family:'Cormorant Garamond',serif;font-size:2.3rem;color:var(--text);margin-bottom:2rem;font-weight:400}
+.contact-items{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem}
+.c-item{display:flex;gap:.9rem;align-items:center;padding:.9rem 1rem;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);transition:all .25s}
+.c-item:hover{border-color:rgba(61,92,53,.3);transform:translateX(4px);box-shadow:0 4px 16px rgba(61,92,53,.06)}
+.c-icon{width:40px;height:40px;background:var(--sage-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.c-info strong{display:block;font-size:.64rem;letter-spacing:.09em;text-transform:uppercase;color:var(--sage);margin-bottom:.2rem;font-weight:600}
+.c-info span{font-size:.87rem;color:var(--text);font-weight:400}
 .hours-box{background:var(--white);padding:1.75rem;border-radius:var(--radius);border:1px solid var(--border)}
-.hours-box h4{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--sage-dark);margin-bottom:1.25rem;font-weight:600;font-style:normal}
-.hours-row{display:flex;justify-content:space-between;padding:.4rem 0;font-size:.84rem;border-bottom:1px solid rgba(74,103,65,.07)}
+.hours-box h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--sage-dark);margin-bottom:1.1rem;font-weight:500}
+.hours-row{display:flex;justify-content:space-between;padding:.45rem 0;font-size:.83rem;border-bottom:1px solid rgba(61,92,53,.06)}
 .hours-row:last-child{border-bottom:none}
 .hours-row span:first-child{color:var(--text-soft);font-weight:300}
 .hours-row span:last-child{color:var(--text);font-weight:500}
-.form-box{background:var(--white);padding:2.5rem;border-radius:var(--radius);border:1px solid var(--border)}
-.form-box h3{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--text);margin-bottom:1.75rem;font-weight:300;font-style:normal}
+.form-box{background:var(--white);padding:2.5rem;border-radius:var(--radius-lg);border:1px solid var(--border)}
+.form-box h3{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--text);margin-bottom:1.75rem;font-weight:400}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.form-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
-.form-group label{font-size:.72rem;font-weight:600;color:var(--text-soft);letter-spacing:.05em;text-transform:uppercase}
-.form-group input,.form-group textarea,.form-group select{border:1px solid rgba(74,103,65,.2);border-radius:var(--radius);padding:.75rem 1rem;font-size:.875rem;font-family:'DM Sans',sans-serif;color:var(--text);background:var(--warm);transition:all .3s;width:100%;outline:none}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--sage);background:var(--white);box-shadow:0 0 0 3px rgba(74,103,65,.08)}
-.form-group textarea{resize:vertical;min-height:110px}
-.email-field{background:var(--sage-pale);border:1.5px dashed rgba(74,103,65,.35);border-radius:var(--radius);padding:1rem 1.25rem;font-size:.82rem;color:var(--sage-dark);font-weight:400;margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
-.email-field span{font-size:1.1rem}
-.btn-submit{width:100%;background:var(--sage);color:var(--white);border:none;padding:1rem;font-size:.875rem;font-weight:500;border-radius:var(--radius);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .3s;position:relative;overflow:hidden}
-.btn-submit::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.1);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.btn-submit:hover::before{transform:scaleX(1)}
-.btn-submit:hover{background:var(--sage-dark);transform:translateY(-1px);box-shadow:0 6px 20px rgba(74,103,65,.3)}
+.form-group{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.9rem}
+.form-group label{font-size:.65rem;font-weight:600;color:var(--text-soft);letter-spacing:.07em;text-transform:uppercase}
+.form-group input,.form-group textarea,.form-group select{border:1px solid rgba(61,92,53,.18);border-radius:var(--radius);padding:.7rem .9rem;font-size:.85rem;font-family:'Outfit',sans-serif;color:var(--text);background:var(--warm);transition:all .25s;width:100%;outline:none;appearance:none}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--sage);background:var(--white);box-shadow:0 0 0 3px rgba(61,92,53,.07)}
+.form-group textarea{resize:vertical;min-height:108px}
+.btn-submit{width:100%;background:var(--sage);color:var(--white);border:none;padding:.95rem;font-size:.84rem;font-weight:500;border-radius:var(--radius);cursor:pointer;font-family:'Outfit',sans-serif;transition:all .25s;letter-spacing:.04em}
+.btn-submit:hover{background:var(--sage-dark);transform:translateY(-1px);box-shadow:0 6px 20px rgba(61,92,53,.28)}
 @media(max-width:900px){.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
 
-.divider{height:4px;background:linear-gradient(90deg,var(--sage-pale),var(--sage),var(--sage-pale))}
+/* DIVIDER */
+.divider{height:1px;background:var(--border)}
 
-.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--sage-light),var(--sage));z-index:200;width:0%;transition:width .1s linear;pointer-events:none}
+/* PROGRESS */
+.progress-bar{position:fixed;top:0;left:0;height:2px;background:var(--sage-light);z-index:200;width:0%;transition:width .08s linear;pointer-events:none}
 
-footer{background:var(--moss);padding:3.5rem 2rem}
-.footer-inner{max-width:1200px;margin:0 auto;text-align:center}
-.footer-logo{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--white);margin-bottom:.4rem;font-weight:300;font-style:normal}
-.footer-logo .hl{color:rgba(168,209,152,.8);font-style:normal}
-.footer-sub{font-size:.75rem;color:rgba(255,255,255,.35);margin-bottom:1.75rem;letter-spacing:.06em;text-transform:uppercase;font-weight:300}
-.footer-nav{display:flex;gap:2rem;justify-content:center;list-style:none;flex-wrap:wrap;margin-bottom:2rem}
-.footer-nav a{color:rgba(255,255,255,.45);text-decoration:none;font-size:.78rem;transition:all .3s;position:relative}
-.footer-nav a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:rgba(168,209,152,.8);transition:width .3s}
-.footer-nav a:hover{color:rgba(168,209,152,.8)}
-.footer-nav a:hover::after{width:100%}
-.footer-copy{font-size:.73rem;color:rgba(255,255,255,.22)}
+/* FOOTER */
+footer{background:var(--moss);padding:4rem 2.5rem 3rem}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.footer-brand .logo-f{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--white);font-weight:400;display:block;margin-bottom:.35rem}
+.footer-brand .logo-f .hl{color:rgba(156,204,138,.75)}
+.footer-brand p{font-size:.75rem;color:rgba(255,255,255,.3);font-weight:300;letter-spacing:.05em;text-transform:uppercase}
+.footer-col h5{font-size:.65rem;color:rgba(255,255,255,.35);letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:1rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.footer-col ul li a{color:rgba(255,255,255,.45);text-decoration:none;font-size:.8rem;font-weight:300;transition:color .2s}
+.footer-col ul li a:hover{color:rgba(156,204,138,.8)}
+.footer-col p{font-size:.8rem;color:rgba(255,255,255,.45);font-weight:300;line-height:1.8}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.2);font-weight:300}
+@media(max-width:768px){.footer-top{grid-template-columns:1fr;gap:2rem}}
 </style>
 </head>
 <body>
@@ -229,7 +242,7 @@ footer{background:var(--moss);padding:3.5rem 2rem}
 
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#" class="logo">Bartosz Adamus<span>Aranżacja terenu · Ogrodnictwo</span></a>
+    <a href="#" class="logo">Bartosz Adamus<span>Aranżacja terenu · Ogrodnictwo · Wrocław</span></a>
     <ul class="nav-links">
       <li><a href="#uslugi">Usługi</a></li>
       <li><a href="#sprzet">Sprzęt</a></li>
@@ -238,61 +251,95 @@ footer{background:var(--moss);padding:3.5rem 2rem}
       <li><a href="#galeria">Realizacje</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
-    <a href="tel:794292863" class="nav-cta">📞 794 292 863</a>
+    <a href="tel:794292863" class="nav-cta">794 292 863</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <span class="leaf-deco leaf-deco-1">🌿</span>
-    <span class="leaf-deco leaf-deco-2">🍃</span>
-    <div class="hero-text">
-      <span class="hero-badge">🌿 Wrocław i okolice</span>
-      <h1 class="hero-title">Twój ogród<br><span class="hl">w dobrych rękach</span></h1>
-      <p class="hero-sub">Profesjonalna aranżacja i ogrodnictwo</p>
-      <p class="hero-desc">Kompleksowe prace terenowe – od niwelacji gruntu i przygotowania trawnika, po nasadzenia i bieżącą pielęgnację. Dysponuję własnym sprzętem ciężkim.</p>
-      <div class="hero-actions">
-        <a href="tel:794292863" class="btn-primary">Zadzwoń teraz</a>
-        <a href="#uslugi" class="btn-ghost">Zobacz ofertę</a>
-      </div>
+    <span class="hero-kicker">Wrocław i okolice</span>
+    <h1 class="hero-title">Twój ogród<br>w <span class="hl">dobrych rękach</span></h1>
+    <p class="hero-desc">Kompleksowe prace terenowe – od niwelacji gruntu i przygotowania trawnika, przez nasadzenia, po bieżącą pielęgnację. Dysponuję własnym sprzętem ciężkim Avant 635.</p>
+    <div class="hero-actions">
+      <a href="tel:794292863" class="btn-primary">Zadzwoń teraz</a>
+      <a href="#uslugi" class="btn-ghost">Zobacz ofertę</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>Avant</strong><span>635</span></div>
+      <div class="hero-stat"><strong>Wrocław</strong><span>i okolice</span></div>
+      <div class="hero-stat"><strong>Pn–Sob</strong><span>dostępny</span></div>
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-img">
-      <img src="zdj1.jpg" alt="Realizacja">
+    <div class="hero-photo-main">
+      <img src="zdj1.jpg" alt="Realizacja ogrodnicza">
     </div>
-    <div class="hero-info-bar">
-      <div class="info-item"><strong>Telefon</strong><span>794 292 863</span></div>
-      <div class="info-item"><strong>Godziny</strong><span>Pn–Pt 9–18, Sob 10–14</span></div>
-      <div class="info-item"><strong>Obszar</strong><span>Wrocław i okolice</span></div>
+    <div class="hero-photo-row">
+      <div class="hero-photo-sm"><img src="zdj2.png" alt="Realizacja"></div>
+      <div class="hero-photo-sm"><img src="zdj3.webp" alt="Sprzęt Avant"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-item"><div class="strip-icon">📞</div>794 292 863</div>
+    <div class="strip-item"><div class="strip-icon">📍</div>Miłostowska 9, 51-315 Wrocław</div>
+    <div class="strip-item"><div class="strip-icon">⏰</div>Pn–Pt 9:00–18:00 · Sob 10:00–14:00</div>
+    <div class="strip-item"><div class="strip-icon">🗺️</div>Wrocław i okolice</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="uslugi">
+  <div class="container">
+    <div class="section-header">
+      <span class="sec-eyebrow reveal">Co oferuję</span>
+      <h2 class="sec-title reveal">Usługi terenowe<br>i <span class="hl">ogrodnicze</span></h2>
+      <p class="sec-lead reveal">Kompleksowe prace od podstaw – przygotowanie terenu, trawniki, nasadzenia i bieżąca pielęgnacja. Obsługuję Wrocław i okolice.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc reveal">
+        <div class="svc-line"></div>
+        <div class="svc-icon">🌱</div>
+        <h3>Przygotowanie trawnika</h3>
+        <p>Wyrównanie, kultywacja i przygotowanie podłoża. Wysiew trawy lub układanie darni z odpowiednim nawożeniem startowym dla gęstego, zdrowego trawnika.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-line"></div>
+        <div class="svc-icon">🚜</div>
+        <h3>Niwelacja terenu</h3>
+        <p>Profesjonalne wyrównanie działki miniładowarką Avant 635. Przemieszczenie ziemi, żwiru i kruszywa nawet w trudno dostępnych miejscach.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-line"></div>
+        <div class="svc-icon">🌳</div>
+        <h3>Nasadzenia i kompozycje</h3>
+        <p>Dobór i sadzenie drzew, krzewów i bylin. Tworzenie rabat i ogrodów dopasowanych do działki, gleby i stylu posesji.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-line"></div>
+        <div class="svc-icon">✂️</div>
+        <h3>Pielęgnacja ogrodu</h3>
+        <p>Koszenie, przycinanie, odchwaszczanie i nawożenie. Sezonowa opieka nad trawnikiem i roślinami ozdobnymi przez cały rok.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<section class="services" id="uslugi">
-  <div class="container">
-    <span class="sec-label reveal">Co oferuję</span>
-    <h2 class="sec-title reveal">Usługi terenowe i <span class="hl">ogrodnicze</span></h2>
-    <p class="sec-lead reveal">Kompleksowe prace od podstaw – przygotowanie terenu, trawniki, nasadzenia i bieżąca pielęgnacja. Obsługuję Wrocław i okolice.</p>
-    <div class="services-grid">
-      <div class="svc reveal"><div class="svc-icon">🌱</div><h3>Szykowanie pod trawnik</h3><p>Wyrównanie, kultywacja i przygotowanie podłoża. Wysiew trawy lub układanie darni z odpowiednim nawożeniem startowym dla gęstego, zdrowego trawnika.</p></div>
-      <div class="svc reveal"><div class="svc-icon">🚜</div><h3>Niwelacja terenu</h3><p>Profesjonalne wyrównanie działki miniładowarką Avant 635. Przemieszczenie ziemi, żwiru i kruszywa nawet w trudno dostępnych miejscach.</p></div>
-      <div class="svc reveal"><div class="svc-icon">🌳</div><h3>Nasadzenia i kompozycje</h3><p>Dobór i sadzenie drzew, krzewów i bylin. Tworzenie rabat i ogrodów dopasowanych do działki, gleby i stylu posesji.</p></div>
-      <div class="svc reveal"><div class="svc-icon">✂️</div><h3>Pielęgnacja ogrodu</h3><p>Koszenie, przycinanie, odchwaszczanie i nawożenie. Sezonowa opieka nad trawnikiem i roślinami ozdobnymi przez cały rok.</p></div>
-    </div>
-  </div>
-</section>
-
+<!-- EQUIPMENT -->
 <section class="avant-sec" id="sprzet">
   <div class="avant-grid">
-    <div class="avant-img reveal-left">
+    <div class="avant-img-wrap reveal-left">
       <img src="zdj3.webp" alt="Miniładowarka Avant 635">
     </div>
     <div class="avant-body">
-      <span class="avant-label reveal">Nasz sprzęt</span>
-      <h2 class="avant-title reveal">Avant 635 –<br><span class="hl">miniładowarka,</span><br>która robi różnicę</h2>
+      <span class="avant-eyebrow reveal">Nasz sprzęt</span>
+      <h2 class="avant-title reveal">Avant 635 – miniładowarka,<br>która robi <span class="hl">różnicę</span></h2>
       <p class="avant-text reveal">Fińska miniładowarka przegubowa, która dociera tam, gdzie inne pojazdy nie mają szans. Kluczowy atut przy pracach na prywatnych działkach i w ciasnych przestrzeniach.</p>
       <ul class="avant-list reveal">
         <li>Wjeżdża przez standardową furtkę i wąskie przejścia</li>
@@ -307,12 +354,19 @@ footer{background:var(--moss);padding:3.5rem 2rem}
 
 <div class="divider"></div>
 
+<!-- ABOUT -->
 <section class="about-sec" id="o-mnie">
   <div class="container">
     <div class="about-grid">
-      <div class="about-photo reveal-left"><img src="zdj2.png" alt="Bartosz Adamus"></div>
+      <div class="about-visual reveal-left">
+        <div class="about-photo-main"><img src="zdj2.png" alt="Bartosz Adamus"></div>
+        <div class="about-photo-row">
+          <div class="about-photo-sm"><img src="zdj4.png" alt="Realizacja"></div>
+          <div class="about-photo-sm"><img src="zdj5.jpg" alt="Realizacja"></div>
+        </div>
+      </div>
       <div>
-        <span class="sec-label reveal">O mnie</span>
+        <span class="sec-eyebrow reveal">O mnie</span>
         <h2 class="sec-title reveal">Bartosz Adamus –<br><span class="hl">pasja do zieleni</span></h2>
         <p class="about-text reveal">Zajmuję się aranżacją terenów i pracami ogrodniczymi w okolicach Wrocławia. Dysponuję własnym sprzętem i podchodzę do każdej realizacji indywidualnie – od małej działki przydomowej po większe projekty terenowe.</p>
         <p class="about-text reveal">Zależy mi, żeby każdy ogród był nie tylko estetyczny, ale też łatwy w codziennej pielęgnacji. Doradzam w doborze roślin i rozwiązań dopasowanych do gleby i nasłonecznienia.</p>
@@ -328,73 +382,89 @@ footer{background:var(--moss);padding:3.5rem 2rem}
   </div>
 </section>
 
+<!-- TIPS -->
 <section class="tips-sec" id="porady">
   <div class="container">
-    <span class="sec-label reveal">Wiedza ogrodnicza</span>
-    <h2 class="sec-title reveal">Porady <span class="hl">sezonowe</span></h2>
+    <div class="section-header">
+      <span class="sec-eyebrow reveal">Wiedza ogrodnicza</span>
+      <h2 class="sec-title reveal">Porady <span class="hl">sezonowe</span></h2>
+    </div>
     <div class="tips-grid">
-      <div class="tip reveal"><span class="tip-season">🌸 Wiosna</span><h3>Przebudzenie ogrodu</h3><p>Marzec–kwiecień to czas na napowietrzenie trawnika, pierwsze nawożenie azotem i usuwanie mchu. Przycinamy trawy ozdobne przed nowym sezonem wzrostu.</p></div>
-      <div class="tip reveal"><span class="tip-season">☀️ Lato</span><h3>Koszenie i nawadnianie</h3><p>Trawnik kośmy co 7–10 dni, zostawiając 4–5 cm wysokości. Podlewamy wieczorami lub rano – nigdy w pełnym słońcu. Odpuszczamy nawożenie azotem.</p></div>
-      <div class="tip reveal"><span class="tip-season">🍂 Jesień</span><h3>Przygotowanie na zimę</h3><p>Wrzesień – idealny czas na wysiew trawy. Gleba ciepła, deszcze pomagają kiełkować. Październik: nawożenie potasem, ostatnie koszenie, zabezpieczenie roślin wrażliwych.</p></div>
-      <div class="tip reveal"><span class="tip-season">❄️ Zima</span><h3>Odpoczynek i planowanie</h3><p>Czas na przegląd narzędzi i zaplanowanie nasadzeń. Unikamy chodzenia po zamrożonym trawniku – kruche źdźbła łamią się i wolno się regenerują.</p></div>
+      <div class="tip reveal">
+        <span class="tip-season">Wiosna · Marzec–Kwiecień</span>
+        <h3>Przebudzenie ogrodu</h3>
+        <p>Czas na napowietrzenie trawnika, pierwsze nawożenie azotem i usuwanie mchu. Przycinamy trawy ozdobne przed nowym sezonem wzrostu.</p>
+      </div>
+      <div class="tip reveal">
+        <span class="tip-season">Lato · Maj–Sierpień</span>
+        <h3>Koszenie i nawadnianie</h3>
+        <p>Trawnik kośmy co 7–10 dni, zostawiając 4–5 cm wysokości. Podlewamy wieczorami lub rano – nigdy w pełnym słońcu. Odpuszczamy nawożenie azotem.</p>
+      </div>
+      <div class="tip reveal">
+        <span class="tip-season">Jesień · Wrzesień–Październik</span>
+        <h3>Przygotowanie na zimę</h3>
+        <p>Wrzesień – idealny czas na wysiew trawy. Gleba ciepła, deszcze pomagają kiełkować. Październik: nawożenie potasem, ostatnie koszenie, zabezpieczenie roślin wrażliwych.</p>
+      </div>
+      <div class="tip reveal">
+        <span class="tip-season">Zima · Listopad–Luty</span>
+        <h3>Odpoczynek i planowanie</h3>
+        <p>Czas na przegląd narzędzi i zaplanowanie nasadzeń. Unikamy chodzenia po zamrożonym trawniku – kruche źdźbła łamią się i wolno się regenerują.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
+<!-- GALLERY -->
 <section class="gallery-sec" id="galeria">
-  <div class="container">
-    <span class="sec-label reveal">Realizacje</span>
-    <h2 class="sec-title reveal">Galeria <span class="hl">prac</span></h2>
-    <p class="sec-lead reveal">Każda realizacja to indywidualny projekt. Poniżej znajdziesz wybrane zdjęcia z naszych realizacji.</p>
-    <div class="carousel-wrap reveal">
-      <div class="carousel">
-        <div class="carousel-track" id="track">
-          <div class="slide">
-            <div class="slide-inner">
-              <div class="ph"><img src="zdj3.webp" alt="Realizacja 1"></div>
-              <div class="ph"><img src="zdj4.png" alt="Realizacja 2"></div>
-              <div class="ph"><img src="zdj5.jpg" alt="Realizacja 3"></div>
-              <div class="ph"><img src="zdj6.webp" alt="Realizacja 4"></div>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="slide-inner">
-              <div class="ph"><img src="zdj7.webp" alt="Realizacja 5"></div>
-              <div class="ph"><img src="zdj8.webp" alt="Realizacja 6"></div>
-              <div class="ph"><img src="zdj9.jpg" alt="Realizacja 7"></div>
-              <div class="ph"><img src="zdj10.jpg" alt="Realizacja 8"></div>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="slide-inner">
-              <div class="ph"><img src="zdj11.jpg" alt="Realizacja 9"></div>
-              <div class="ph"><img src="zdj12.jpg" alt="Realizacja 10"></div>
-              <div class="ph"><img src="zdj13.jpg" alt="Realizacja 11"></div>
-              <div class="ph"><img src="zdj14.jpg" alt="Realizacja 12"></div>
-            </div>
-          </div>
-        </div>
+  <div class="gallery-header">
+    <div>
+      <span class="sec-eyebrow reveal">Realizacje</span>
+      <h2 class="sec-title reveal">Galeria <span class="hl">prac</span></h2>
+    </div>
+    <p class="sec-lead reveal" style="max-width:360px;">Każda realizacja to indywidualny projekt. Poniżej wybrane zdjęcia z naszych prac w okolicach Wrocławia.</p>
+  </div>
+  <div class="carousel-wrap reveal">
+    <div class="carousel-track" id="carTrack">
+      <div class="car-slide">
+        <div class="ph"><img src="zdj1.jpg" alt="Realizacja 1"></div>
+        <div class="ph"><img src="zdj2.png" alt="Realizacja 2"></div>
+        <div class="ph"><img src="zdj3.webp" alt="Realizacja 3"></div>
+        <div class="ph"><img src="zdj4.png" alt="Realizacja 4"></div>
       </div>
-      <div class="car-controls">
-        <button class="car-btn" id="prev">←</button>
-        <div class="car-dots">
-          <div class="dot active" data-i="0"></div>
-          <div class="dot" data-i="1"></div>
-          <div class="dot" data-i="2"></div>
-        </div>
-        <button class="car-btn" id="next">→</button>
+      <div class="car-slide">
+        <div class="ph"><img src="zdj5.jpg" alt="Realizacja 5"></div>
+        <div class="ph"><img src="zdj6.webp" alt="Realizacja 6"></div>
+        <div class="ph"><img src="zdj1.jpg" alt="Realizacja 7"></div>
+        <div class="ph"><img src="zdj2.png" alt="Realizacja 8"></div>
       </div>
+      <div class="car-slide">
+        <div class="ph"><img src="zdj3.webp" alt="Realizacja 9"></div>
+        <div class="ph"><img src="zdj4.png" alt="Realizacja 10"></div>
+        <div class="ph"><img src="zdj5.jpg" alt="Realizacja 11"></div>
+        <div class="ph"><img src="zdj6.webp" alt="Realizacja 12"></div>
+      </div>
+    </div>
+    <div class="car-controls">
+      <button class="car-btn" id="carPrev">←</button>
+      <div class="car-dots">
+        <div class="dot active" data-i="0"></div>
+        <div class="dot" data-i="1"></div>
+        <div class="dot" data-i="2"></div>
+      </div>
+      <button class="car-btn" id="carNext">→</button>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact-sec" id="kontakt">
   <div class="container">
     <div class="contact-grid">
-      <div class="contact-info reveal-left">
-        <h2>Skontaktuj się</h2>
+      <div class="reveal-left">
+        <span class="sec-eyebrow">Kontakt</span>
+        <h2 class="contact-title">Skontaktuj się</h2>
         <div class="contact-items">
           <div class="c-item">
             <div class="c-icon">📞</div>
@@ -411,13 +481,13 @@ footer{background:var(--moss);padding:3.5rem 2rem}
         </div>
         <div class="hours-box">
           <h4>Godziny otwarcia</h4>
-          <div class="hours-row"><span>Poniedziałek–Piątek</span><span>09:00–18:00</span></div>
-          <div class="hours-row"><span>Sobota</span><span>10:00–14:00</span></div>
+          <div class="hours-row"><span>Poniedziałek – Piątek</span><span>09:00 – 18:00</span></div>
+          <div class="hours-row"><span>Sobota</span><span>10:00 – 14:00</span></div>
           <div class="hours-row"><span>Niedziela</span><span>Zamknięte</span></div>
         </div>
       </div>
       <div class="form-box reveal-right">
-        <h3>Wyślij wiadomość</h3>
+        <h3>Wyślij zapytanie</h3>
         <div class="form-row">
           <div class="form-group"><label>Imię i nazwisko</label><input type="text" placeholder="Jan Kowalski"></div>
           <div class="form-group"><label>Telefon</label><input type="tel" placeholder="500 000 000"></div>
@@ -432,7 +502,7 @@ footer{background:var(--moss);padding:3.5rem 2rem}
             <option>Inne</option>
           </select>
         </div>
-        <div class="form-group"><label>Wiadomość</label><textarea placeholder="Opisz swój projekt, lokalizację i oczekiwany termin..."></textarea></div>
+        <div class="form-group"><label>Wiadomość</label><textarea placeholder="Opisz swój projekt, lokalizację i oczekiwany termin realizacji..."></textarea></div>
         <button class="btn-submit">Wyślij zapytanie</button>
       </div>
     </div>
@@ -441,65 +511,77 @@ footer{background:var(--moss);padding:3.5rem 2rem}
 
 <footer>
   <div class="footer-inner">
-    <p class="footer-logo">Bartosz <span class="hl">Adamus</span></p>
-    <p class="footer-sub">Aranżacja Terenu · Ogrodnictwo · Wrocław</p>
-    <ul class="footer-nav">
-      <li><a href="#uslugi">Usługi</a></li>
-      <li><a href="#sprzet">Sprzęt</a></li>
-      <li><a href="#o-mnie">O mnie</a></li>
-      <li><a href="#porady">Porady</a></li>
-      <li><a href="#galeria">Realizacje</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-    </ul>
-    <p class="footer-copy">© 2025 Bartosz Adamus · Miłostowska 9, 51-315 Wrocław · 794 292 863</p>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-f">Bartosz <span class="hl">Adamus</span></span>
+        <p>Aranżacja Terenu · Ogrodnictwo</p>
+      </div>
+      <div class="footer-col">
+        <h5>Nawigacja</h5>
+        <ul>
+          <li><a href="#uslugi">Usługi</a></li>
+          <li><a href="#sprzet">Sprzęt</a></li>
+          <li><a href="#o-mnie">O mnie</a></li>
+          <li><a href="#porady">Porady</a></li>
+          <li><a href="#galeria">Realizacje</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Dane kontaktowe</h5>
+        <p>794 292 863<br>Miłostowska 9<br>51-315 Wrocław<br><br>Pn–Pt 09:00–18:00<br>Sob 10:00–14:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Bartosz Adamus · Wrocław</p>
+      <p class="footer-copy">Aranżacja terenu i ogrodnictwo</p>
+    </div>
   </div>
 </footer>
 
 <script>
-const track = document.getElementById('track');
-const dots = document.querySelectorAll('.dot');
-let current = 0;
-const total = 3;
-let autoTimer;
-
-function goTo(i) {
-  current = i;
-  track.style.transform = `translateX(-${current * 100}%)`;
-  dots.forEach((d,idx) => d.classList.toggle('active', idx === current));
-}
-function resetAuto() { clearInterval(autoTimer); autoTimer = setInterval(() => goTo((current + 1) % total), 5000); }
-document.getElementById('prev').addEventListener('click', () => { goTo((current - 1 + total) % total); resetAuto(); });
-document.getElementById('next').addEventListener('click', () => { goTo((current + 1) % total); resetAuto(); });
-dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.i); resetAuto(); }));
-resetAuto();
-
 const progressBar = document.getElementById('progressBar');
 const navbar = document.getElementById('navbar');
 let lastScrollY = 0;
+
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   progressBar.style.width = (scrollTop / docHeight * 100) + '%';
-  if (scrollTop > lastScrollY && scrollTop > 120) {
-    navbar.style.transform = 'translateY(-100%)';
-  } else {
-    navbar.style.transform = 'translateY(0)';
-  }
+  navbar.style.transform = (scrollTop > lastScrollY && scrollTop > 100) ? 'translateY(-100%)' : 'translateY(0)';
   lastScrollY = scrollTop;
 }, { passive: true });
+
+// Carousel
+const carTrack = document.getElementById('carTrack');
+const carDots = document.querySelectorAll('.dot');
+let carCurrent = 0;
+const carTotal = 3;
+let carAuto;
+
+function carGoTo(i) {
+  carCurrent = i;
+  carTrack.style.transform = `translateX(-${carCurrent * 100}%)`;
+  carDots.forEach((d,idx) => d.classList.toggle('active', idx === carCurrent));
+}
+function carResetAuto() { clearInterval(carAuto); carAuto = setInterval(() => carGoTo((carCurrent + 1) % carTotal), 5000); }
+document.getElementById('carPrev').addEventListener('click', () => { carGoTo((carCurrent - 1 + carTotal) % carTotal); carResetAuto(); });
+document.getElementById('carNext').addEventListener('click', () => { carGoTo((carCurrent + 1) % carTotal); carResetAuto(); });
+carDots.forEach(d => d.addEventListener('click', () => { carGoTo(+d.dataset.i); carResetAuto(); }));
+carResetAuto();
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add('visible');
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el => {
-  const group = el.closest('.services-grid,.tips-grid,.avant-list,.contact-items');
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach((el) => {
+  const group = el.closest('.services-grid,.tips-grid,.contact-items,.avant-list,.about-meta');
   if (group) {
     const siblings = Array.from(group.querySelectorAll('.reveal,.reveal-left,.reveal-right'));
     const idx = siblings.indexOf(el);
-    el.style.transitionDelay = (idx * 0.08) + 's';
+    if (idx >= 0) el.style.transitionDelay = (idx * 0.09) + 's';
   }
   observer.observe(el);
 });
