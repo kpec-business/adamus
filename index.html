@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bartosz Adamus – Aranżacja Terenu i Ogrodnictwo | Wrocław</title>
+<title>B.Art Garden – Bartosz Adamus | Aranżacja Terenu i Ogrodnictwo | Wrocław</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -47,15 +47,15 @@ body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--warm);o
 .reveal-scale.visible{opacity:1;transform:scale(1)}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,242,237,0.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);animation:navSlide .6s cubic-bezier(.22,1,.36,1) both;transition:transform .4s cubic-bezier(.22,1,.36,1)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:400;color:var(--sage-dark);text-decoration:none;line-height:1.25;letter-spacing:.01em}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;gap:1.5rem}
+.logo{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:400;color:var(--sage-dark);text-decoration:none;line-height:1.25;letter-spacing:.01em;flex-shrink:0}
 .logo span{display:block;color:var(--stone);font-family:'DM Sans',sans-serif;font-weight:300;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{text-decoration:none;color:var(--text-soft);font-size:.8rem;font-weight:400;transition:color .25s;position:relative}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--sage);transition:width .3s cubic-bezier(.22,1,.36,1)}
 .nav-links a:hover::after{width:100%}
 .nav-links a:hover{color:var(--sage)}
-.nav-cta{background:var(--sage);color:var(--white);padding:.6rem 1.4rem;font-size:.8rem;font-weight:500;text-decoration:none;border-radius:var(--radius);transition:background .25s,transform .2s;display:inline-block}
+.nav-cta{background:var(--sage);color:var(--white) !important;padding:.6rem 1.4rem;font-size:.8rem;font-weight:500;text-decoration:none !important;border-radius:var(--radius);transition:background .25s,transform .2s;display:inline-block;white-space:nowrap;flex-shrink:0}
 .nav-cta:hover{background:var(--sage-dark);transform:translateY(-1px)}
 @media(max-width:768px){.nav-links{display:none}}
 
@@ -81,9 +81,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,242,237,
 .hero-img{flex:1;overflow:hidden;background:var(--sage-pale);position:relative}
 .hero-img img{width:100%;height:100%;object-fit:cover;animation:bgPan 8s ease-out both}
 .hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 70%,rgba(245,242,237,.3));pointer-events:none}
-.hero-info-bar{background:var(--white);padding:1.75rem 2rem;display:flex;gap:2.5rem;border-top:3px solid var(--sage);animation:fadeUp .7s .8s both}
-.info-item strong{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);font-weight:600;margin-bottom:.25rem}
-.info-item span{font-size:.9rem;color:var(--text);font-weight:400}
 
 .leaf-deco{position:absolute;opacity:.06;font-size:180px;animation:leafFloat 8s ease-in-out infinite;pointer-events:none;user-select:none}
 .leaf-deco-1{top:10%;right:5%;animation-delay:0s}
@@ -139,6 +136,8 @@ section{padding:5.5rem 2rem}
 .meta-row:hover{transform:translateX(4px)}
 .meta-row dt{color:var(--sage);font-weight:600;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding-top:2px}
 .meta-row dd{color:var(--text);font-weight:300}
+.meta-row dd a{color:var(--text);text-decoration:none}
+.meta-row dd a:hover{color:var(--sage)}
 @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:3rem}}
 
 .tips-sec{background:var(--sage);position:relative;overflow:hidden}
@@ -184,6 +183,8 @@ section{padding:5.5rem 2rem}
 .c-item:hover .c-icon{transform:scale(1.1);background:var(--sage-dark)}
 .c-info strong{display:block;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);margin-bottom:.3rem;font-weight:600}
 .c-info span{font-size:.9rem;color:var(--text);font-weight:300}
+.c-info a{color:var(--text);text-decoration:none}
+.c-info a:hover{color:var(--sage)}
 .hours-box{background:var(--white);padding:1.75rem;border-radius:var(--radius);border:1px solid var(--border)}
 .hours-box h4{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--sage-dark);margin-bottom:1.25rem;font-weight:600;font-style:normal}
 .hours-row{display:flex;justify-content:space-between;padding:.4rem 0;font-size:.84rem;border-bottom:1px solid rgba(74,103,65,.07)}
@@ -198,8 +199,6 @@ section{padding:5.5rem 2rem}
 .form-group input,.form-group textarea,.form-group select{border:1px solid rgba(74,103,65,.2);border-radius:var(--radius);padding:.75rem 1rem;font-size:.875rem;font-family:'DM Sans',sans-serif;color:var(--text);background:var(--warm);transition:all .3s;width:100%;outline:none}
 .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--sage);background:var(--white);box-shadow:0 0 0 3px rgba(74,103,65,.08)}
 .form-group textarea{resize:vertical;min-height:110px}
-.email-field{background:var(--sage-pale);border:1.5px dashed rgba(74,103,65,.35);border-radius:var(--radius);padding:1rem 1.25rem;font-size:.82rem;color:var(--sage-dark);font-weight:400;margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
-.email-field span{font-size:1.1rem}
 .btn-submit{width:100%;background:var(--sage);color:var(--white);border:none;padding:1rem;font-size:.875rem;font-weight:500;border-radius:var(--radius);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .3s;position:relative;overflow:hidden}
 .btn-submit::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.1);transform:scaleX(0);transform-origin:left;transition:transform .3s}
 .btn-submit:hover::before{transform:scaleX(1)}
@@ -229,7 +228,7 @@ footer{background:var(--moss);padding:3.5rem 2rem}
 
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#" class="logo">Bartosz Adamus<span>Aranżacja terenu · Ogrodnictwo</span></a>
+    <a href="#" class="logo">B.Art Garden<span>Aranżacja terenu · Ogrodnictwo</span></a>
     <ul class="nav-links">
       <li><a href="#uslugi">Usługi</a></li>
       <li><a href="#sprzet">Sprzęt</a></li>
@@ -247,7 +246,9 @@ footer{background:var(--moss);padding:3.5rem 2rem}
     <span class="leaf-deco leaf-deco-1">🌿</span>
     <span class="leaf-deco leaf-deco-2">🍃</span>
     <div class="hero-text">
-      <span class="hero-badge">🌿 Wrocław i okolice</span>
+      <div style="animation:fadeUp .6s .2s both;margin-bottom:1.75rem">
+        <img src="logobart.PNG" alt="B.Art Garden" style="height:80px;width:auto;filter:brightness(0) invert(1);opacity:0.9">
+      </div>
       <h1 class="hero-title">Twój ogród<br><span class="hl">w dobrych rękach</span></h1>
       <p class="hero-sub">Profesjonalna aranżacja i ogrodnictwo</p>
       <p class="hero-desc">Kompleksowe prace terenowe – od niwelacji gruntu i przygotowania trawnika, po nasadzenia i bieżącą pielęgnację. Dysponuję własnym sprzętem ciężkim.</p>
@@ -260,11 +261,6 @@ footer{background:var(--moss);padding:3.5rem 2rem}
   <div class="hero-right">
     <div class="hero-img">
       <img src="zdj1.jpg" alt="Realizacja">
-    </div>
-    <div class="hero-info-bar">
-      <div class="info-item"><strong>Telefon</strong><span>794 292 863</span></div>
-      <div class="info-item"><strong>Godziny</strong><span>Pn–Pt 9–18, Sob 10–14</span></div>
-      <div class="info-item"><strong>Obszar</strong><span>Wrocław i okolice</span></div>
     </div>
   </div>
 </section>
@@ -318,8 +314,11 @@ footer{background:var(--moss);padding:3.5rem 2rem}
         <p class="about-text reveal">Zależy mi, żeby każdy ogród był nie tylko estetyczny, ale też łatwy w codziennej pielęgnacji. Doradzam w doborze roślin i rozwiązań dopasowanych do gleby i nasłonecznienia.</p>
         <p class="about-text reveal">Aktualnie rozwijam usługi ogrodnicze – możesz umówić się ze mną na miejscu, a wspólnie zaplanujemy projekt od podstaw.</p>
         <dl class="about-meta reveal">
-          <div class="meta-row"><dt>Telefon</dt><dd>794 292 863</dd></div>
-          <div class="meta-row"><dt>Adres</dt><dd>Miłostowska 9, 51-315 Wrocław</dd></div>
+          <div class="meta-row"><dt>Telefon</dt><dd><a href="tel:794292863">794 292 863</a></dd></div>
+          <div class="meta-row"><dt>E-mail</dt><dd><a href="mailto:B.ArtGarden.kontakt@gmail.com">B.ArtGarden.kontakt@gmail.com</a></dd></div>
+          <div class="meta-row"><dt>NIP</dt><dd>731 199 0356</dd></div>
+          <div class="meta-row"><dt>REGON</dt><dd>529 186 311</dd></div>
+          <div class="meta-row"><dt>Adres</dt><dd>Miłostowska 9/3, 51-315 Wrocław</dd></div>
           <div class="meta-row"><dt>Obszar</dt><dd>Wrocław i okolice</dd></div>
           <div class="meta-row"><dt>Godziny</dt><dd>Pn–Pt 09:00–18:00, Sob 10:00–14:00</dd></div>
         </dl>
@@ -398,11 +397,15 @@ footer{background:var(--moss);padding:3.5rem 2rem}
         <div class="contact-items">
           <div class="c-item">
             <div class="c-icon">📞</div>
-            <div class="c-info"><strong>Telefon</strong><span><a href="tel:794292863" style="color:inherit;text-decoration:none">794 292 863</a></span></div>
+            <div class="c-info"><strong>Telefon</strong><span><a href="tel:794292863">794 292 863</a></span></div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon">✉️</div>
+            <div class="c-info"><strong>E-mail</strong><span><a href="mailto:B.ArtGarden.kontakt@gmail.com">B.ArtGarden.kontakt@gmail.com</a></span></div>
           </div>
           <div class="c-item">
             <div class="c-icon">📍</div>
-            <div class="c-info"><strong>Adres</strong><span>Miłostowska 9, 51-315 Wrocław</span></div>
+            <div class="c-info"><strong>Adres</strong><span>Miłostowska 9/3, 51-315 Wrocław</span></div>
           </div>
           <div class="c-item">
             <div class="c-icon">🗺️</div>
@@ -441,7 +444,7 @@ footer{background:var(--moss);padding:3.5rem 2rem}
 
 <footer>
   <div class="footer-inner">
-    <p class="footer-logo">Bartosz <span class="hl">Adamus</span></p>
+    <div style="margin-bottom:1rem"><img src="logobart.PNG" alt="B.Art Garden" style="height:70px;width:auto;filter:brightness(0) invert(1);opacity:0.75"></div>
     <p class="footer-sub">Aranżacja Terenu · Ogrodnictwo · Wrocław</p>
     <ul class="footer-nav">
       <li><a href="#uslugi">Usługi</a></li>
@@ -451,7 +454,7 @@ footer{background:var(--moss);padding:3.5rem 2rem}
       <li><a href="#galeria">Realizacje</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
-    <p class="footer-copy">© 2025 Bartosz Adamus · Miłostowska 9, 51-315 Wrocław · 794 292 863</p>
+    <p class="footer-copy">© 2025 B.Art Garden · Bartosz Adamus · Miłostowska 9/3, 51-315 Wrocław · 794 292 863 · NIP: 731 199 0356</p>
   </div>
 </footer>
 
