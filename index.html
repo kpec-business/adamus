@@ -158,7 +158,8 @@ section{padding:5.5rem 2rem}
 .carousel{overflow:hidden;border-radius:var(--radius)}
 .carousel-track{display:flex;transition:transform .6s cubic-bezier(.22,1,.36,1)}
 .slide{min-width:100%;position:relative}
-.slide-inner{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:280px 280px;gap:6px}
+.slide-inner{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.slide-inner .ph{aspect-ratio:1/1;height:auto;}
 .slide-inner .ph{background:var(--sage-pale);overflow:hidden;position:relative}
 .slide-inner .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1)}
 .slide-inner .ph:hover img{transform:scale(1.06)}
@@ -220,6 +221,8 @@ footer{background:var(--moss);padding:3.5rem 2rem}
 .footer-nav a:hover{color:rgba(168,209,152,.8)}
 .footer-nav a:hover::after{width:100%}
 .footer-copy{font-size:.73rem;color:rgba(255,255,255,.22)}
+
+  .logo { display:flex; align-items:center; gap:.75rem; }
 </style>
 </head>
 <body>
@@ -228,7 +231,10 @@ footer{background:var(--moss);padding:3.5rem 2rem}
 
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#" class="logo">B.Art Garden<span>Aranżacja terenu · Ogrodnictwo</span></a>
+  <a href="#" class="logo">
+  <img src="logobart.PNG" alt="B.Art Garden" style="height:44px;width:auto;display:block;">
+  <span>Aranżacja terenu · Ogrodnictwo</span>
+</a>
     <ul class="nav-links">
       <li><a href="#uslugi">Usługi</a></li>
       <li><a href="#sprzet">Sprzęt</a></li>
@@ -246,9 +252,6 @@ footer{background:var(--moss);padding:3.5rem 2rem}
     <span class="leaf-deco leaf-deco-1">🌿</span>
     <span class="leaf-deco leaf-deco-2">🍃</span>
     <div class="hero-text">
-      <div style="animation:fadeUp .6s .2s both;margin-bottom:1.75rem">
-        <img src="logobart.PNG" alt="B.Art Garden" style="height:80px;width:auto;filter:brightness(0) invert(1);opacity:0.9">
-      </div>
       <h1 class="hero-title">Twój ogród<br><span class="hl">w dobrych rękach</span></h1>
       <p class="hero-sub">Profesjonalna aranżacja i ogrodnictwo</p>
       <p class="hero-desc">Kompleksowe prace terenowe – od niwelacji gruntu i przygotowania trawnika, po nasadzenia i bieżącą pielęgnację. Dysponuję własnym sprzętem ciężkim.</p>
