@@ -223,6 +223,28 @@ footer{background:var(--moss);padding:3.5rem 2rem}
 .footer-copy{font-size:.73rem;color:rgba(255,255,255,.22)}
 
   .logo { display:flex; align-items:center; gap:.75rem; }
+
+
+
+
+
+
+  .calc-sec{background:var(--warm);padding:4rem 2rem}
+.calc-wrap{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:2.5rem;margin-top:2.5rem;max-width:780px}
+.calc-service-tabs{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
+.calc-tab{background:var(--sage-pale);border:1px solid var(--border);color:var(--text-soft);font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;padding:.5rem 1.2rem;border-radius:40px;cursor:pointer;transition:all .25s}
+.calc-tab.active{background:var(--sage);color:var(--white);border-color:var(--sage)}
+.calc-tab:hover:not(.active){background:var(--sage-mist);color:var(--sage)}
+.calc-labels{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1rem}
+.calc-labels span:first-child{font-size:1rem;color:var(--text-soft);font-weight:300}
+.calc-labels span:last-child{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:300;color:var(--sage)}
+.calc-range{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:3px;background:linear-gradient(to right,var(--sage) 0%,var(--sage) 5%,var(--sage-pale) 5%,var(--sage-pale) 100%);outline:none;cursor:pointer;transition:background .1s}
+.calc-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;background:var(--sage);border:3px solid var(--white);box-shadow:0 2px 8px rgba(74,103,65,.3);cursor:pointer;transition:transform .2s}
+.calc-range::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--sage);border:3px solid var(--white);box-shadow:0 2px 8px rgba(74,103,65,.3);cursor:pointer}
+.calc-range:hover::-webkit-slider-thumb{transform:scale(1.15)}
+.calc-track-labels{display:flex;justify-content:space-between;margin-top:.5rem;font-size:.72rem;color:var(--stone);font-weight:300}
+.calc-note{margin-top:1.5rem;font-size:.75rem;color:var(--stone);font-weight:300;border-top:1px solid var(--border);padding-top:1rem}
+@media(max-width:600px){.calc-labels span:last-child{font-size:1.8rem}}
 </style>
 </head>
 <body>
@@ -282,6 +304,8 @@ footer{background:var(--moss);padding:3.5rem 2rem}
   </div>
 </section>
 
+  
+
 <section class="avant-sec" id="sprzet">
   <div class="avant-grid">
     <div class="avant-img reveal-left">
@@ -301,7 +325,31 @@ footer{background:var(--moss);padding:3.5rem 2rem}
     </div>
   </div>
 </section>
-
+<section class="calc-sec">
+  <div class="container">
+    <span class="sec-label reveal">Kalkulator</span>
+    <h2 class="sec-title reveal">Oszacuj <span class="hl">koszt prac</span></h2>
+    <div class="calc-wrap reveal">
+      <div class="calc-service-tabs">
+        <button class="calc-tab active" data-rate="18">Niwelacja terenu</button>
+        <button class="calc-tab" data-rate="12">Nasadzenia</button>
+        <button class="calc-tab" data-rate="8">Pielęgnacja</button>
+      </div>
+      <div class="calc-slider-row">
+        <div class="calc-labels">
+          <span id="calcArea">100 m²</span>
+          <span id="calcPrice">1 800 zł</span>
+        </div>
+        <input type="range" id="calcRange" min="20" max="2000" value="100" step="10" class="calc-range">
+        <div class="calc-track-labels">
+          <span>20 m²</span>
+          <span>2 000 m²</span>
+        </div>
+      </div>
+      <p class="calc-note">Orientacyjna wycena. Ostateczna cena zależy od warunków terenu i zakresu prac.</p>
+    </div>
+  </div>
+</section>
 <div class="divider"></div>
 
 <section class="about-sec" id="o-mnie">
@@ -507,6 +555,31 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
+
+  const calcRange = document.getElementById('calcRange');
+const calcArea = document.getElementById('calcArea');
+const calcPrice = document.getElementById('calcPrice');
+const calcTabs = document.querySelectorAll('.calc-tab');
+let activeRate = 18;
+
+function updateCalc() {
+  const v = +calcRange.value;
+  const max = +calcRange.max;
+  calcRange.style.background = `linear-gradient(to right,var(--sage) 0%,var(--sage) ${v/max*100}%,var(--sage-pale) ${v/max*100}%,var(--sage-pale) 100%)`;
+  calcArea.textContent = v + ' m²';
+  calcPrice.textContent = (v * activeRate).toLocaleString('pl-PL') + ' zł';
+}
+
+calcRange.addEventListener('input', updateCalc);
+calcTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    calcTabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    activeRate = +tab.dataset.rate;
+    updateCalc();
+  });
+});
+updateCalc();
 </script>
 </body>
 </html>
